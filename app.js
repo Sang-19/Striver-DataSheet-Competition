@@ -5,6 +5,7 @@ const state = { user:null, page:'home', catalogue:null, progress:{}, competition
 const $ = (s,root=document)=>root.querySelector(s);
 const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const allTasks = ()=>state.catalogue.topics.flatMap(t=>t.tasks.map(x=>({...x,topic:t.name,topicId:t.id})));
+const categoryCount = ()=>state.catalogue.topics.length;
 const completed = ()=>Object.values(state.progress).filter(x=>x.completed).length;
 const total = ()=>allTasks().length;
 const percent = ()=>total()?Math.round(completed()/total()*100):0;
@@ -52,7 +53,7 @@ function appShell(){
  <section class="grid">
  <article class="card stat"><span class="muted">Completed</span><strong>${completed()}</strong><small>of ${total()} starter tasks</small></article>
  <article class="card stat"><span class="muted">Progress</span><strong>${percent()}%</strong><small>Sheet completion</small></article>
- <article class="card stat"><span class="muted">Topics</span><strong>${state.catalogue.topics.length}</strong><small>In current catalogue</small></article>
+ <article class="card stat"><span class="muted">Topics</span><strong>${categoryCount()}</strong><small>Categories in sheet</small></article>
  <article class="card stat"><span class="muted">Competitions</span><strong>${state.competitions.length}</strong><small>Joined challenges</small></article>
  <article class="card wide"><div class="section-head"><h2>My DSA sheet</h2><span class="pill">MANUAL TRACKING</span></div><div class="row" style="justify-content:space-between"><b>${completed()} / ${total()} completed</b><span class="muted">${percent()}%</span></div><div class="progress"><i style="width:${percent()}%"></i></div><div id="topics">${state.catalogue.topics.map(topicHTML).join('')}</div></article>
  <aside class="card side"><div class="section-head"><h2>Compete</h2><span>⚔</span></div><p class="muted">Create a private arena or join your friend's challenge with a code.</p><button class="btn" id="create-comp" style="width:100%">＋ Create competition</button><input class="field" id="join-code" placeholder="Enter invite code"><button class="btn secondary" id="join-comp" style="width:100%">Join competition</button><div style="margin-top:18px"><h2 style="font-size:16px">Your arenas</h2>${state.competitions.length?state.competitions.map(c=>`<div class="topic"><b>${esc(c.name||'DSA Showdown')}</b><div class="muted" style="font-size:12px">${esc(c.code||'')}</div><button class="btn ghost open-comp" data-id="${c.id}" style="margin-top:8px">View comparison →</button></div>`).join(''):'<div class="empty">No competitions yet.</div>'}</div></aside>
@@ -60,7 +61,8 @@ function appShell(){
 }
 function topicHTML(topic){
  const done=topic.tasks.filter(t=>state.progress[t.id]?.completed).length;
- return `<section class="topic"><div class="topic-head"><span class="topic-title">${esc(topic.name)}</span><span class="pill">${done}/${topic.tasks.length}</span></div>${topic.tasks.map(t=>`<label class="task"><input type="checkbox" data-task="${esc(t.id)}" ${state.progress[t.id]?.completed?'checked':''}><span>${esc(t.title)}</span>${t.url?`<a href="${esc(t.url)}" target="_blank" rel="noopener">Open ↗</a>`:''}</label>`).join('')}</section>`;
+ const subtopics=[...new Set(topic.tasks.map(t=>t.subtopic))];
+ return `<section class="topic"><div class="topic-head"><span class="topic-title">${esc(topic.name)}</span><span class="pill">${done}/${topic.tasks.length}</span></div>${subtopics.map(sub=>{const tasks=topic.tasks.filter(t=>t.subtopic===sub);const subDone=tasks.filter(t=>state.progress[t.id]?.completed).length;return `<div class="topic" style="padding:12px 0 0;margin-top:8px"><div class="topic-head"><span class="topic-title" style="font-size:13px">${esc(sub)}</span><span class="pill">${subDone}/${tasks.length}</span></div>${tasks.map(t=>`<label class="task"><input type="checkbox" data-task="${esc(t.id)}" ${state.progress[t.id]?.completed?'checked':''}><span>${esc(t.title)}</span></label>`).join('')}</div>`}).join('')}</section>`;
 }
 function bindNavigation(){
  $('#signout').onclick=()=>auth.signOut();
