@@ -19,15 +19,17 @@ service cloud.firestore {
     }
 
     match /competitions/{competitionId} {
-      allow read: if signedIn() && (
-        resource.data.ownerUid == request.auth.uid ||
-        isCompetitionMember(competitionId)
-      );
+      // Competition documents expose only the challenge metadata needed by signed-in users
+      // to resolve an invite. Keep member progress in the protected users/{uid}/progress path.
+      allow read: if signedIn();
       allow create: if signedIn()
         && request.resource.data.ownerUid == request.auth.uid
         && request.resource.data.keys().hasOnly(['name','code','ownerUid','memberUids','status','createdAt']);
-      allow update: if signedIn() && isCompetitionMember(competitionId)
-        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['memberUids','updatedAt']);
+      // A signed-in user may add only their own UID when joining with a valid invite code.
+      allow update: if signedIn()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['memberUids','updatedAt'])
+        && request.resource.data.memberUids.hasAll(resource.data.memberUids)
+        && request.resource.data.memberUids.hasAny([request.auth.uid]);
       allow delete: if signedIn() && resource.data.ownerUid == request.auth.uid;
 
       match /members/{uid} {
@@ -40,7 +42,8 @@ service cloud.firestore {
     }
 
     match /inviteCodes/{code} {
-      allow read: if signedIn();
+      allow get: if signedIn();
+      allow list: if false;
       allow create: if signedIn() && request.resource.data.ownerUid == request.auth.uid;
       allow update, delete: if signedIn() && resource.data.ownerUid == request.auth.uid;
     }
