@@ -11,10 +11,11 @@ service cloud.firestore {
     match /users/{uid} {
       allow read: if signedIn();
       allow create, update: if isSelf(uid)
-        && request.resource.data.keys().hasOnly(['displayName','photoURL','email','createdAt','updatedAt']);
+        && request.resource.data.keys().hasOnly(['displayName','photoURL','email','createdAt','updatedAt','completedCount']);
       allow delete: if false;
       match /progress/{taskId} {
-        allow read, create, update, delete: if isSelf(uid);
+        allow read: if isSelf(uid);
+        allow create, update, delete: if isSelf(uid);
       }
     }
 
