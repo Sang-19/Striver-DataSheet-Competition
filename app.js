@@ -49,12 +49,35 @@ function render(){
  if(!state.user){root.innerHTML=authScreen();bindAuth();return}
  root.innerHTML=appShell();bindNavigation();bindTasks();bindCompetition();
 }
-function authScreen(){return `<main class="auth card"><div class="brand">STRIVER <span>ARENA</span></div><p class="eyebrow">YOUR DSA. YOUR RACE.</p><h1>Outlearn.<br>Outlast.</h1><p class="muted">Track your sheet, challenge a friend and make every solved problem count.</p><button class="btn" id="google">Continue with Google</button><div class="muted" style="text-align:center;margin:12px">or use email</div><input class="field" id="email" type="email" placeholder="Email address"><input class="field" id="password" type="password" placeholder="Password (6+ characters)"><button class="btn secondary" id="signin">Sign in</button><button class="btn ghost" id="signup">Create account</button><p class="muted" id="authmsg" style="font-size:12px"></p></main>`}
+function authScreen(){return `<main class="auth card"><div class="brand">STRIVER <span>ARENA</span></div><p class="eyebrow">YOUR DSA. YOUR RACE.</p><h1>Outlearn.<br>Outlast.</h1><p class="muted">Track your sheet, challenge a friend and make every solved problem count.</p><button class="btn" id="google">Continue with Google</button><div class="muted" style="text-align:center;margin:12px">or use email</div><input class="field" id="email" type="email" autocomplete="email" placeholder="Email address"><input class="field" id="password" type="password" autocomplete="current-password" placeholder="Password (6+ characters)"><button class="btn secondary" id="signin">Sign in</button><button class="btn ghost" id="signup">Create account</button><button class="btn ghost" id="reset-password">Forgot password?</button><p class="muted" id="authmsg" style="font-size:12px" role="status" aria-live="polite"></p></main>`}
 function bindAuth(){
  const msg=t=>$('#authmsg').textContent=t;
- $('#google').onclick=async()=>{try{await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())}catch(e){msg(e.message)}};
- $('#signin').onclick=async()=>{try{await auth.signInWithEmailAndPassword($('#email').value,$('#password').value)}catch(e){msg(e.message)}};
- $('#signup').onclick=async()=>{try{await auth.createUserWithEmailAndPassword($('#email').value,$('#password').value)}catch(e){msg(e.message)}};
+ const email=()=>$('#email').value.trim();
+ const explain=e=>{
+  const code=e?.code||'';
+  if(code==='auth/invalid-credential'||code==='auth/wrong-password'||code==='auth/user-not-found')
+   return 'Email or password is incorrect. Check both carefully, or use Forgot password? to reset it. If you originally registered with Google, use Continue with Google.';
+  if(code==='auth/invalid-email') return 'Please enter a valid email address.';
+  if(code==='auth/user-disabled') return 'This account has been disabled. Contact the app administrator.';
+  if(code==='auth/too-many-requests') return 'Too many attempts. Wait a little and try again.';
+  if(code==='auth/network-request-failed') return 'Network error. Check your internet connection and try again.';
+  if(code==='auth/operation-not-allowed') return 'Email/password sign-in is not enabled in Firebase Authentication.';
+  return 'Authentication failed ('+(code||'unknown-error')+'). Please try again.';
+ };
+ $('#google').onclick=async()=>{try{await auth.signInWithPopup(new firebase.auth.GoogleAuthProvider())}catch(e){msg(explain(e))}};
+ $('#signin').onclick=async()=>{
+  if(!email()||!$('#password').value){msg('Enter your email address and password.');return}
+  try{await auth.signInWithEmailAndPassword(email(),$('#password').value)}catch(e){msg(explain(e))}
+ };
+ $('#signup').onclick=async()=>{
+  if(!email()||!$('#password').value){msg('Enter your email address and choose a password.');return}
+  try{await auth.createUserWithEmailAndPassword(email(),$('#password').value)}catch(e){msg(explain(e))}
+ };
+ $('#reset-password').onclick=async()=>{
+  if(!email()){msg('Enter your email address first, then click Forgot password?');return}
+  try{await auth.sendPasswordResetEmail(email());msg('If an account exists for this address, Firebase has sent a password-reset email. Check your inbox and spam folder.')}
+  catch(e){msg(explain(e))}
+ };
 }
 function appShell(){
  const user=state.user,photo=user.photoURL||'';
