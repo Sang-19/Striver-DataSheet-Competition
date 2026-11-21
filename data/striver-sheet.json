@@ -1,48 +1,1365 @@
 {
-  "title": "Striver DSA Sheet — starter catalogue",
-  "description": "Replace this starter catalogue with the verified sheet data before launch. Tasks are manually marked complete by each user.",
+  "title": "Striver DSA Sheet — category and subtopic structure",
+  "description": "Category totals and subtopic counts transcribed from the supplied screenshots and count list. Individual problem titles were not visible/provided, so generic numbered placeholders are used until the exact problem list is supplied.",
   "sourceUrl": "https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/",
+  "totalProblems": 179,
+  "totalCategories": 17,
+  "problemTitlesProvided": false,
   "topics": [
-    {"id":"basics","name":"Learn the basics","tasks":[
-      {"id":"basics-01","title":"Things to Know in Programming"},
-      {"id":"basics-02","title":"Build-up Logical Thinking"},
-      {"id":"basics-03","title":"Learn STL"},
-      {"id":"basics-04","title":"Know Basic Maths"},
-      {"id":"basics-05","title":"Learn Basic Recursion"}
-    ]},
-    {"id":"sorting","name":"Sorting Techniques","tasks":[
-      {"id":"sorting-01","title":"Selection Sort"},
-      {"id":"sorting-02","title":"Bubble Sort"},
-      {"id":"sorting-03","title":"Insertion Sort"},
-      {"id":"sorting-04","title":"Merge Sort"},
-      {"id":"sorting-05","title":"Recursive Bubble Sort"},
-      {"id":"sorting-06","title":"Recursive Insertion Sort"},
-      {"id":"sorting-07","title":"Quick Sort"}
-    ]},
-    {"id":"arrays","name":"Arrays","tasks":[
-      {"id":"arrays-01","title":"Largest Element in an Array"},
-      {"id":"arrays-02","title":"Second Largest Element"},
-      {"id":"arrays-03","title":"Check if Array Is Sorted"},
-      {"id":"arrays-04","title":"Remove Duplicates from Sorted Array"},
-      {"id":"arrays-05","title":"Left Rotate Array by One"},
-      {"id":"arrays-06","title":"Left Rotate Array by D Places"},
-      {"id":"arrays-07","title":"Move Zeroes to End"}
-    ]},
-    {"id":"binary-search","name":"Binary Search","tasks":[
-      {"id":"bs-01","title":"Binary Search to Find X"},
-      {"id":"bs-02","title":"Implement Lower Bound"},
-      {"id":"bs-03","title":"Implement Upper Bound"},
-      {"id":"bs-04","title":"Search Insert Position"}
-    ]},
-    {"id":"strings","name":"Strings","tasks":[
-      {"id":"strings-01","title":"Remove Outermost Parentheses"},
-      {"id":"strings-02","title":"Reverse Words in a String"},
-      {"id":"strings-03","title":"Largest Odd Number in a String"}
-    ]},
-    {"id":"linked-list","name":"Linked List","tasks":[
-      {"id":"ll-01","title":"Introduction to Linked List"},
-      {"id":"ll-02","title":"Insert Node in Linked List"},
-      {"id":"ll-03","title":"Delete Node in Linked List"}
-    ]}
+    {
+      "id": "arrays",
+      "name": "Arrays",
+      "tasks": [
+        {
+          "id": "linear-scan-01",
+          "title": "Problem 01",
+          "subtopic": "Linear Scan",
+          "subtopicId": "linear-scan",
+          "category": "Arrays"
+        },
+        {
+          "id": "linear-scan-02",
+          "title": "Problem 02",
+          "subtopic": "Linear Scan",
+          "subtopicId": "linear-scan",
+          "category": "Arrays"
+        },
+        {
+          "id": "linear-scan-03",
+          "title": "Problem 03",
+          "subtopic": "Linear Scan",
+          "subtopicId": "linear-scan",
+          "category": "Arrays"
+        },
+        {
+          "id": "linear-scan-04",
+          "title": "Problem 04",
+          "subtopic": "Linear Scan",
+          "subtopicId": "linear-scan",
+          "category": "Arrays"
+        },
+        {
+          "id": "two-pointers-01",
+          "title": "Problem 01",
+          "subtopic": "Two Pointers",
+          "subtopicId": "two-pointers",
+          "category": "Arrays"
+        },
+        {
+          "id": "two-pointers-02",
+          "title": "Problem 02",
+          "subtopic": "Two Pointers",
+          "subtopicId": "two-pointers",
+          "category": "Arrays"
+        },
+        {
+          "id": "two-pointers-03",
+          "title": "Problem 03",
+          "subtopic": "Two Pointers",
+          "subtopicId": "two-pointers",
+          "category": "Arrays"
+        },
+        {
+          "id": "two-pointers-04",
+          "title": "Problem 04",
+          "subtopic": "Two Pointers",
+          "subtopicId": "two-pointers",
+          "category": "Arrays"
+        },
+        {
+          "id": "two-pointers-05",
+          "title": "Problem 05",
+          "subtopic": "Two Pointers",
+          "subtopicId": "two-pointers",
+          "category": "Arrays"
+        },
+        {
+          "id": "two-pointers-06",
+          "title": "Problem 06",
+          "subtopic": "Two Pointers",
+          "subtopicId": "two-pointers",
+          "category": "Arrays"
+        },
+        {
+          "id": "divide-and-conquer-01",
+          "title": "Problem 01",
+          "subtopic": "Divide and Conquer",
+          "subtopicId": "divide-and-conquer",
+          "category": "Arrays"
+        },
+        {
+          "id": "divide-and-conquer-02",
+          "title": "Problem 02",
+          "subtopic": "Divide and Conquer",
+          "subtopicId": "divide-and-conquer",
+          "category": "Arrays"
+        }
+      ]
+    },
+    {
+      "id": "hashing",
+      "name": "Hashing",
+      "tasks": [
+        {
+          "id": "hashing-prefix-sums-01",
+          "title": "Problem 01",
+          "subtopic": "Hashing & Prefix Sums",
+          "subtopicId": "hashing-prefix-sums",
+          "category": "Hashing"
+        },
+        {
+          "id": "hashing-prefix-sums-02",
+          "title": "Problem 02",
+          "subtopic": "Hashing & Prefix Sums",
+          "subtopicId": "hashing-prefix-sums",
+          "category": "Hashing"
+        },
+        {
+          "id": "hashing-prefix-sums-03",
+          "title": "Problem 03",
+          "subtopic": "Hashing & Prefix Sums",
+          "subtopicId": "hashing-prefix-sums",
+          "category": "Hashing"
+        },
+        {
+          "id": "hashing-prefix-sums-04",
+          "title": "Problem 04",
+          "subtopic": "Hashing & Prefix Sums",
+          "subtopicId": "hashing-prefix-sums",
+          "category": "Hashing"
+        },
+        {
+          "id": "hashing-prefix-sums-05",
+          "title": "Problem 05",
+          "subtopic": "Hashing & Prefix Sums",
+          "subtopicId": "hashing-prefix-sums",
+          "category": "Hashing"
+        }
+      ]
+    },
+    {
+      "id": "binary-search",
+      "name": "Binary Search",
+      "tasks": [
+        {
+          "id": "binary-search-core-01",
+          "title": "Problem 01",
+          "subtopic": "Binary Search",
+          "subtopicId": "binary-search-core",
+          "category": "Binary Search"
+        },
+        {
+          "id": "binary-search-core-02",
+          "title": "Problem 02",
+          "subtopic": "Binary Search",
+          "subtopicId": "binary-search-core",
+          "category": "Binary Search"
+        },
+        {
+          "id": "binary-search-core-03",
+          "title": "Problem 03",
+          "subtopic": "Binary Search",
+          "subtopicId": "binary-search-core",
+          "category": "Binary Search"
+        },
+        {
+          "id": "binary-search-core-04",
+          "title": "Problem 04",
+          "subtopic": "Binary Search",
+          "subtopicId": "binary-search-core",
+          "category": "Binary Search"
+        },
+        {
+          "id": "binary-search-core-05",
+          "title": "Problem 05",
+          "subtopic": "Binary Search",
+          "subtopicId": "binary-search-core",
+          "category": "Binary Search"
+        },
+        {
+          "id": "binary-search-core-06",
+          "title": "Problem 06",
+          "subtopic": "Binary Search",
+          "subtopicId": "binary-search-core",
+          "category": "Binary Search"
+        },
+        {
+          "id": "search-on-answer-01",
+          "title": "Problem 01",
+          "subtopic": "Search on Answer",
+          "subtopicId": "search-on-answer",
+          "category": "Binary Search"
+        },
+        {
+          "id": "search-on-answer-02",
+          "title": "Problem 02",
+          "subtopic": "Search on Answer",
+          "subtopicId": "search-on-answer",
+          "category": "Binary Search"
+        },
+        {
+          "id": "search-on-answer-03",
+          "title": "Problem 03",
+          "subtopic": "Search on Answer",
+          "subtopicId": "search-on-answer",
+          "category": "Binary Search"
+        },
+        {
+          "id": "search-on-answer-04",
+          "title": "Problem 04",
+          "subtopic": "Search on Answer",
+          "subtopicId": "search-on-answer",
+          "category": "Binary Search"
+        },
+        {
+          "id": "search-on-answer-05",
+          "title": "Problem 05",
+          "subtopic": "Search on Answer",
+          "subtopicId": "search-on-answer",
+          "category": "Binary Search"
+        },
+        {
+          "id": "partition-search-01",
+          "title": "Problem 01",
+          "subtopic": "Partition Search",
+          "subtopicId": "partition-search",
+          "category": "Binary Search"
+        },
+        {
+          "id": "partition-search-02",
+          "title": "Problem 02",
+          "subtopic": "Partition Search",
+          "subtopicId": "partition-search",
+          "category": "Binary Search"
+        }
+      ]
+    },
+    {
+      "id": "sliding-window",
+      "name": "Sliding Window and Two Pointers",
+      "tasks": [
+        {
+          "id": "sliding-window-core-01",
+          "title": "Problem 01",
+          "subtopic": "Sliding Window",
+          "subtopicId": "sliding-window-core",
+          "category": "Sliding Window and Two Pointers"
+        },
+        {
+          "id": "sliding-window-core-02",
+          "title": "Problem 02",
+          "subtopic": "Sliding Window",
+          "subtopicId": "sliding-window-core",
+          "category": "Sliding Window and Two Pointers"
+        },
+        {
+          "id": "sliding-window-core-03",
+          "title": "Problem 03",
+          "subtopic": "Sliding Window",
+          "subtopicId": "sliding-window-core",
+          "category": "Sliding Window and Two Pointers"
+        },
+        {
+          "id": "sliding-window-core-04",
+          "title": "Problem 04",
+          "subtopic": "Sliding Window",
+          "subtopicId": "sliding-window-core",
+          "category": "Sliding Window and Two Pointers"
+        },
+        {
+          "id": "sliding-window-core-05",
+          "title": "Problem 05",
+          "subtopic": "Sliding Window",
+          "subtopicId": "sliding-window-core",
+          "category": "Sliding Window and Two Pointers"
+        },
+        {
+          "id": "sliding-window-core-06",
+          "title": "Problem 06",
+          "subtopic": "Sliding Window",
+          "subtopicId": "sliding-window-core",
+          "category": "Sliding Window and Two Pointers"
+        },
+        {
+          "id": "counting-windows-01",
+          "title": "Problem 01",
+          "subtopic": "Counting Windows",
+          "subtopicId": "counting-windows",
+          "category": "Sliding Window and Two Pointers"
+        },
+        {
+          "id": "counting-windows-02",
+          "title": "Problem 02",
+          "subtopic": "Counting Windows",
+          "subtopicId": "counting-windows",
+          "category": "Sliding Window and Two Pointers"
+        },
+        {
+          "id": "counting-windows-03",
+          "title": "Problem 03",
+          "subtopic": "Counting Windows",
+          "subtopicId": "counting-windows",
+          "category": "Sliding Window and Two Pointers"
+        }
+      ]
+    },
+    {
+      "id": "recursion",
+      "name": "Recursion and Backtracking",
+      "tasks": [
+        {
+          "id": "subsets-combinations-01",
+          "title": "Problem 01",
+          "subtopic": "Subsets & Combinations",
+          "subtopicId": "subsets-combinations",
+          "category": "Recursion and Backtracking"
+        },
+        {
+          "id": "subsets-combinations-02",
+          "title": "Problem 02",
+          "subtopic": "Subsets & Combinations",
+          "subtopicId": "subsets-combinations",
+          "category": "Recursion and Backtracking"
+        },
+        {
+          "id": "subsets-combinations-03",
+          "title": "Problem 03",
+          "subtopic": "Subsets & Combinations",
+          "subtopicId": "subsets-combinations",
+          "category": "Recursion and Backtracking"
+        },
+        {
+          "id": "subsets-combinations-04",
+          "title": "Problem 04",
+          "subtopic": "Subsets & Combinations",
+          "subtopicId": "subsets-combinations",
+          "category": "Recursion and Backtracking"
+        },
+        {
+          "id": "subsets-combinations-05",
+          "title": "Problem 05",
+          "subtopic": "Subsets & Combinations",
+          "subtopicId": "subsets-combinations",
+          "category": "Recursion and Backtracking"
+        },
+        {
+          "id": "subsets-combinations-06",
+          "title": "Problem 06",
+          "subtopic": "Subsets & Combinations",
+          "subtopicId": "subsets-combinations",
+          "category": "Recursion and Backtracking"
+        },
+        {
+          "id": "subsets-combinations-07",
+          "title": "Problem 07",
+          "subtopic": "Subsets & Combinations",
+          "subtopicId": "subsets-combinations",
+          "category": "Recursion and Backtracking"
+        },
+        {
+          "id": "backtracking-01",
+          "title": "Problem 01",
+          "subtopic": "Backtracking",
+          "subtopicId": "backtracking",
+          "category": "Recursion and Backtracking"
+        },
+        {
+          "id": "backtracking-02",
+          "title": "Problem 02",
+          "subtopic": "Backtracking",
+          "subtopicId": "backtracking",
+          "category": "Recursion and Backtracking"
+        },
+        {
+          "id": "backtracking-03",
+          "title": "Problem 03",
+          "subtopic": "Backtracking",
+          "subtopicId": "backtracking",
+          "category": "Recursion and Backtracking"
+        }
+      ]
+    },
+    {
+      "id": "linked-list",
+      "name": "Linked List",
+      "tasks": [
+        {
+          "id": "fast-slow-pointers-01",
+          "title": "Problem 01",
+          "subtopic": "Fast & Slow Pointers",
+          "subtopicId": "fast-slow-pointers",
+          "category": "Linked List"
+        },
+        {
+          "id": "fast-slow-pointers-02",
+          "title": "Problem 02",
+          "subtopic": "Fast & Slow Pointers",
+          "subtopicId": "fast-slow-pointers",
+          "category": "Linked List"
+        },
+        {
+          "id": "fast-slow-pointers-03",
+          "title": "Problem 03",
+          "subtopic": "Fast & Slow Pointers",
+          "subtopicId": "fast-slow-pointers",
+          "category": "Linked List"
+        },
+        {
+          "id": "fast-slow-pointers-04",
+          "title": "Problem 04",
+          "subtopic": "Fast & Slow Pointers",
+          "subtopicId": "fast-slow-pointers",
+          "category": "Linked List"
+        },
+        {
+          "id": "fast-slow-pointers-05",
+          "title": "Problem 05",
+          "subtopic": "Fast & Slow Pointers",
+          "subtopicId": "fast-slow-pointers",
+          "category": "Linked List"
+        },
+        {
+          "id": "fast-slow-pointers-06",
+          "title": "Problem 06",
+          "subtopic": "Fast & Slow Pointers",
+          "subtopicId": "fast-slow-pointers",
+          "category": "Linked List"
+        },
+        {
+          "id": "fast-slow-pointers-07",
+          "title": "Problem 07",
+          "subtopic": "Fast & Slow Pointers",
+          "subtopicId": "fast-slow-pointers",
+          "category": "Linked List"
+        },
+        {
+          "id": "reversal-rewiring-01",
+          "title": "Problem 01",
+          "subtopic": "Reversal & Rewiring",
+          "subtopicId": "reversal-rewiring",
+          "category": "Linked List"
+        },
+        {
+          "id": "reversal-rewiring-02",
+          "title": "Problem 02",
+          "subtopic": "Reversal & Rewiring",
+          "subtopicId": "reversal-rewiring",
+          "category": "Linked List"
+        },
+        {
+          "id": "reversal-rewiring-03",
+          "title": "Problem 03",
+          "subtopic": "Reversal & Rewiring",
+          "subtopicId": "reversal-rewiring",
+          "category": "Linked List"
+        },
+        {
+          "id": "reversal-rewiring-04",
+          "title": "Problem 04",
+          "subtopic": "Reversal & Rewiring",
+          "subtopicId": "reversal-rewiring",
+          "category": "Linked List"
+        },
+        {
+          "id": "reversal-rewiring-05",
+          "title": "Problem 05",
+          "subtopic": "Reversal & Rewiring",
+          "subtopicId": "reversal-rewiring",
+          "category": "Linked List"
+        },
+        {
+          "id": "reversal-rewiring-06",
+          "title": "Problem 06",
+          "subtopic": "Reversal & Rewiring",
+          "subtopicId": "reversal-rewiring",
+          "category": "Linked List"
+        },
+        {
+          "id": "reversal-rewiring-07",
+          "title": "Problem 07",
+          "subtopic": "Reversal & Rewiring",
+          "subtopicId": "reversal-rewiring",
+          "category": "Linked List"
+        },
+        {
+          "id": "reversal-rewiring-08",
+          "title": "Problem 08",
+          "subtopic": "Reversal & Rewiring",
+          "subtopicId": "reversal-rewiring",
+          "category": "Linked List"
+        },
+        {
+          "id": "reversal-rewiring-09",
+          "title": "Problem 09",
+          "subtopic": "Reversal & Rewiring",
+          "subtopicId": "reversal-rewiring",
+          "category": "Linked List"
+        }
+      ]
+    },
+    {
+      "id": "stack-queues",
+      "name": "Stack and Queues",
+      "tasks": [
+        {
+          "id": "monotonic-stack-queue-01",
+          "title": "Problem 01",
+          "subtopic": "Monotonic Stack / Queue",
+          "subtopicId": "monotonic-stack-queue",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "monotonic-stack-queue-02",
+          "title": "Problem 02",
+          "subtopic": "Monotonic Stack / Queue",
+          "subtopicId": "monotonic-stack-queue",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "monotonic-stack-queue-03",
+          "title": "Problem 03",
+          "subtopic": "Monotonic Stack / Queue",
+          "subtopicId": "monotonic-stack-queue",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "monotonic-stack-queue-04",
+          "title": "Problem 04",
+          "subtopic": "Monotonic Stack / Queue",
+          "subtopicId": "monotonic-stack-queue",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "monotonic-stack-queue-05",
+          "title": "Problem 05",
+          "subtopic": "Monotonic Stack / Queue",
+          "subtopicId": "monotonic-stack-queue",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "monotonic-stack-queue-06",
+          "title": "Problem 06",
+          "subtopic": "Monotonic Stack / Queue",
+          "subtopicId": "monotonic-stack-queue",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "monotonic-stack-queue-07",
+          "title": "Problem 07",
+          "subtopic": "Monotonic Stack / Queue",
+          "subtopicId": "monotonic-stack-queue",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "monotonic-stack-queue-08",
+          "title": "Problem 08",
+          "subtopic": "Monotonic Stack / Queue",
+          "subtopicId": "monotonic-stack-queue",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "monotonic-stack-queue-09",
+          "title": "Problem 09",
+          "subtopic": "Monotonic Stack / Queue",
+          "subtopicId": "monotonic-stack-queue",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "data-structure-design-01",
+          "title": "Problem 01",
+          "subtopic": "Data Structure Design",
+          "subtopicId": "data-structure-design",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "data-structure-design-02",
+          "title": "Problem 02",
+          "subtopic": "Data Structure Design",
+          "subtopicId": "data-structure-design",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "data-structure-design-03",
+          "title": "Problem 03",
+          "subtopic": "Data Structure Design",
+          "subtopicId": "data-structure-design",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "data-structure-design-04",
+          "title": "Problem 04",
+          "subtopic": "Data Structure Design",
+          "subtopicId": "data-structure-design",
+          "category": "Stack and Queues"
+        },
+        {
+          "id": "data-structure-design-05",
+          "title": "Problem 05",
+          "subtopic": "Data Structure Design",
+          "subtopicId": "data-structure-design",
+          "category": "Stack and Queues"
+        }
+      ]
+    },
+    {
+      "id": "greedy",
+      "name": "Greedy Algorithms",
+      "tasks": [
+        {
+          "id": "greedy-core-01",
+          "title": "Problem 01",
+          "subtopic": "Greedy",
+          "subtopicId": "greedy-core",
+          "category": "Greedy Algorithms"
+        },
+        {
+          "id": "greedy-core-02",
+          "title": "Problem 02",
+          "subtopic": "Greedy",
+          "subtopicId": "greedy-core",
+          "category": "Greedy Algorithms"
+        },
+        {
+          "id": "greedy-core-03",
+          "title": "Problem 03",
+          "subtopic": "Greedy",
+          "subtopicId": "greedy-core",
+          "category": "Greedy Algorithms"
+        },
+        {
+          "id": "intervals-scheduling-01",
+          "title": "Problem 01",
+          "subtopic": "Intervals & Scheduling",
+          "subtopicId": "intervals-scheduling",
+          "category": "Greedy Algorithms"
+        },
+        {
+          "id": "intervals-scheduling-02",
+          "title": "Problem 02",
+          "subtopic": "Intervals & Scheduling",
+          "subtopicId": "intervals-scheduling",
+          "category": "Greedy Algorithms"
+        },
+        {
+          "id": "intervals-scheduling-03",
+          "title": "Problem 03",
+          "subtopic": "Intervals & Scheduling",
+          "subtopicId": "intervals-scheduling",
+          "category": "Greedy Algorithms"
+        },
+        {
+          "id": "intervals-scheduling-04",
+          "title": "Problem 04",
+          "subtopic": "Intervals & Scheduling",
+          "subtopicId": "intervals-scheduling",
+          "category": "Greedy Algorithms"
+        },
+        {
+          "id": "intervals-scheduling-05",
+          "title": "Problem 05",
+          "subtopic": "Intervals & Scheduling",
+          "subtopicId": "intervals-scheduling",
+          "category": "Greedy Algorithms"
+        }
+      ]
+    },
+    {
+      "id": "heaps",
+      "name": "Heaps",
+      "tasks": [
+        {
+          "id": "heap-priority-queue-01",
+          "title": "Problem 01",
+          "subtopic": "Heap / Priority Queue",
+          "subtopicId": "heap-priority-queue",
+          "category": "Heaps"
+        },
+        {
+          "id": "heap-priority-queue-02",
+          "title": "Problem 02",
+          "subtopic": "Heap / Priority Queue",
+          "subtopicId": "heap-priority-queue",
+          "category": "Heaps"
+        },
+        {
+          "id": "heap-priority-queue-03",
+          "title": "Problem 03",
+          "subtopic": "Heap / Priority Queue",
+          "subtopicId": "heap-priority-queue",
+          "category": "Heaps"
+        },
+        {
+          "id": "heap-priority-queue-04",
+          "title": "Problem 04",
+          "subtopic": "Heap / Priority Queue",
+          "subtopicId": "heap-priority-queue",
+          "category": "Heaps"
+        },
+        {
+          "id": "heap-priority-queue-05",
+          "title": "Problem 05",
+          "subtopic": "Heap / Priority Queue",
+          "subtopicId": "heap-priority-queue",
+          "category": "Heaps"
+        }
+      ]
+    },
+    {
+      "id": "binary-trees",
+      "name": "Binary Trees",
+      "tasks": [
+        {
+          "id": "bfs-01",
+          "title": "Problem 01",
+          "subtopic": "BFS",
+          "subtopicId": "bfs",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "bfs-02",
+          "title": "Problem 02",
+          "subtopic": "BFS",
+          "subtopicId": "bfs",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "bfs-03",
+          "title": "Problem 03",
+          "subtopic": "BFS",
+          "subtopicId": "bfs",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "bfs-04",
+          "title": "Problem 04",
+          "subtopic": "BFS",
+          "subtopicId": "bfs",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "bfs-05",
+          "title": "Problem 05",
+          "subtopic": "BFS",
+          "subtopicId": "bfs",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "bfs-06",
+          "title": "Problem 06",
+          "subtopic": "BFS",
+          "subtopicId": "bfs",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "bfs-07",
+          "title": "Problem 07",
+          "subtopic": "BFS",
+          "subtopicId": "bfs",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "dfs-tree-dp-01",
+          "title": "Problem 01",
+          "subtopic": "DFS / Tree DP",
+          "subtopicId": "dfs-tree-dp",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "dfs-tree-dp-02",
+          "title": "Problem 02",
+          "subtopic": "DFS / Tree DP",
+          "subtopicId": "dfs-tree-dp",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "dfs-tree-dp-03",
+          "title": "Problem 03",
+          "subtopic": "DFS / Tree DP",
+          "subtopicId": "dfs-tree-dp",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "dfs-tree-dp-04",
+          "title": "Problem 04",
+          "subtopic": "DFS / Tree DP",
+          "subtopicId": "dfs-tree-dp",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "dfs-tree-dp-05",
+          "title": "Problem 05",
+          "subtopic": "DFS / Tree DP",
+          "subtopicId": "dfs-tree-dp",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "dfs-tree-dp-06",
+          "title": "Problem 06",
+          "subtopic": "DFS / Tree DP",
+          "subtopicId": "dfs-tree-dp",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "dfs-tree-dp-07",
+          "title": "Problem 07",
+          "subtopic": "DFS / Tree DP",
+          "subtopicId": "dfs-tree-dp",
+          "category": "Binary Trees"
+        },
+        {
+          "id": "dfs-tree-dp-08",
+          "title": "Problem 08",
+          "subtopic": "DFS / Tree DP",
+          "subtopicId": "dfs-tree-dp",
+          "category": "Binary Trees"
+        }
+      ]
+    },
+    {
+      "id": "binary-search-trees",
+      "name": "Binary Search Trees",
+      "tasks": [
+        {
+          "id": "inorder-traversal-01",
+          "title": "Problem 01",
+          "subtopic": "Inorder Traversal",
+          "subtopicId": "inorder-traversal",
+          "category": "Binary Search Trees"
+        },
+        {
+          "id": "inorder-traversal-02",
+          "title": "Problem 02",
+          "subtopic": "Inorder Traversal",
+          "subtopicId": "inorder-traversal",
+          "category": "Binary Search Trees"
+        },
+        {
+          "id": "inorder-traversal-03",
+          "title": "Problem 03",
+          "subtopic": "Inorder Traversal",
+          "subtopicId": "inorder-traversal",
+          "category": "Binary Search Trees"
+        },
+        {
+          "id": "inorder-traversal-04",
+          "title": "Problem 04",
+          "subtopic": "Inorder Traversal",
+          "subtopicId": "inorder-traversal",
+          "category": "Binary Search Trees"
+        },
+        {
+          "id": "inorder-traversal-05",
+          "title": "Problem 05",
+          "subtopic": "Inorder Traversal",
+          "subtopicId": "inorder-traversal",
+          "category": "Binary Search Trees"
+        },
+        {
+          "id": "inorder-traversal-06",
+          "title": "Problem 06",
+          "subtopic": "Inorder Traversal",
+          "subtopicId": "inorder-traversal",
+          "category": "Binary Search Trees"
+        },
+        {
+          "id": "inorder-traversal-07",
+          "title": "Problem 07",
+          "subtopic": "Inorder Traversal",
+          "subtopicId": "inorder-traversal",
+          "category": "Binary Search Trees"
+        },
+        {
+          "id": "inorder-traversal-08",
+          "title": "Problem 08",
+          "subtopic": "Inorder Traversal",
+          "subtopicId": "inorder-traversal",
+          "category": "Binary Search Trees"
+        },
+        {
+          "id": "inorder-traversal-09",
+          "title": "Problem 09",
+          "subtopic": "Inorder Traversal",
+          "subtopicId": "inorder-traversal",
+          "category": "Binary Search Trees"
+        },
+        {
+          "id": "inorder-traversal-10",
+          "title": "Problem 10",
+          "subtopic": "Inorder Traversal",
+          "subtopicId": "inorder-traversal",
+          "category": "Binary Search Trees"
+        }
+      ]
+    },
+    {
+      "id": "graphs",
+      "name": "Graphs",
+      "tasks": [
+        {
+          "id": "bfs-dfs-01",
+          "title": "Problem 01",
+          "subtopic": "BFS / DFS",
+          "subtopicId": "bfs-dfs",
+          "category": "Graphs"
+        },
+        {
+          "id": "bfs-dfs-02",
+          "title": "Problem 02",
+          "subtopic": "BFS / DFS",
+          "subtopicId": "bfs-dfs",
+          "category": "Graphs"
+        },
+        {
+          "id": "bfs-dfs-03",
+          "title": "Problem 03",
+          "subtopic": "BFS / DFS",
+          "subtopicId": "bfs-dfs",
+          "category": "Graphs"
+        },
+        {
+          "id": "bfs-dfs-04",
+          "title": "Problem 04",
+          "subtopic": "BFS / DFS",
+          "subtopicId": "bfs-dfs",
+          "category": "Graphs"
+        },
+        {
+          "id": "bfs-dfs-05",
+          "title": "Problem 05",
+          "subtopic": "BFS / DFS",
+          "subtopicId": "bfs-dfs",
+          "category": "Graphs"
+        },
+        {
+          "id": "bfs-dfs-06",
+          "title": "Problem 06",
+          "subtopic": "BFS / DFS",
+          "subtopicId": "bfs-dfs",
+          "category": "Graphs"
+        },
+        {
+          "id": "bfs-dfs-07",
+          "title": "Problem 07",
+          "subtopic": "BFS / DFS",
+          "subtopicId": "bfs-dfs",
+          "category": "Graphs"
+        },
+        {
+          "id": "bfs-dfs-08",
+          "title": "Problem 08",
+          "subtopic": "BFS / DFS",
+          "subtopicId": "bfs-dfs",
+          "category": "Graphs"
+        },
+        {
+          "id": "ordering-connectivity-01",
+          "title": "Problem 01",
+          "subtopic": "Ordering & Connectivity",
+          "subtopicId": "ordering-connectivity",
+          "category": "Graphs"
+        },
+        {
+          "id": "ordering-connectivity-02",
+          "title": "Problem 02",
+          "subtopic": "Ordering & Connectivity",
+          "subtopicId": "ordering-connectivity",
+          "category": "Graphs"
+        },
+        {
+          "id": "ordering-connectivity-03",
+          "title": "Problem 03",
+          "subtopic": "Ordering & Connectivity",
+          "subtopicId": "ordering-connectivity",
+          "category": "Graphs"
+        },
+        {
+          "id": "ordering-connectivity-04",
+          "title": "Problem 04",
+          "subtopic": "Ordering & Connectivity",
+          "subtopicId": "ordering-connectivity",
+          "category": "Graphs"
+        },
+        {
+          "id": "ordering-connectivity-05",
+          "title": "Problem 05",
+          "subtopic": "Ordering & Connectivity",
+          "subtopicId": "ordering-connectivity",
+          "category": "Graphs"
+        },
+        {
+          "id": "ordering-connectivity-06",
+          "title": "Problem 06",
+          "subtopic": "Ordering & Connectivity",
+          "subtopicId": "ordering-connectivity",
+          "category": "Graphs"
+        },
+        {
+          "id": "ordering-connectivity-07",
+          "title": "Problem 07",
+          "subtopic": "Ordering & Connectivity",
+          "subtopicId": "ordering-connectivity",
+          "category": "Graphs"
+        },
+        {
+          "id": "shortest-path-01",
+          "title": "Problem 01",
+          "subtopic": "Shortest Path",
+          "subtopicId": "shortest-path",
+          "category": "Graphs"
+        },
+        {
+          "id": "shortest-path-02",
+          "title": "Problem 02",
+          "subtopic": "Shortest Path",
+          "subtopicId": "shortest-path",
+          "category": "Graphs"
+        },
+        {
+          "id": "shortest-path-03",
+          "title": "Problem 03",
+          "subtopic": "Shortest Path",
+          "subtopicId": "shortest-path",
+          "category": "Graphs"
+        },
+        {
+          "id": "shortest-path-04",
+          "title": "Problem 04",
+          "subtopic": "Shortest Path",
+          "subtopicId": "shortest-path",
+          "category": "Graphs"
+        },
+        {
+          "id": "shortest-path-05",
+          "title": "Problem 05",
+          "subtopic": "Shortest Path",
+          "subtopicId": "shortest-path",
+          "category": "Graphs"
+        },
+        {
+          "id": "shortest-path-06",
+          "title": "Problem 06",
+          "subtopic": "Shortest Path",
+          "subtopicId": "shortest-path",
+          "category": "Graphs"
+        },
+        {
+          "id": "shortest-path-07",
+          "title": "Problem 07",
+          "subtopic": "Shortest Path",
+          "subtopicId": "shortest-path",
+          "category": "Graphs"
+        },
+        {
+          "id": "shortest-path-08",
+          "title": "Problem 08",
+          "subtopic": "Shortest Path",
+          "subtopicId": "shortest-path",
+          "category": "Graphs"
+        },
+        {
+          "id": "shortest-path-09",
+          "title": "Problem 09",
+          "subtopic": "Shortest Path",
+          "subtopicId": "shortest-path",
+          "category": "Graphs"
+        },
+        {
+          "id": "dsu-mst-01",
+          "title": "Problem 01",
+          "subtopic": "DSU / MST",
+          "subtopicId": "dsu-mst",
+          "category": "Graphs"
+        },
+        {
+          "id": "dsu-mst-02",
+          "title": "Problem 02",
+          "subtopic": "DSU / MST",
+          "subtopicId": "dsu-mst",
+          "category": "Graphs"
+        },
+        {
+          "id": "dsu-mst-03",
+          "title": "Problem 03",
+          "subtopic": "DSU / MST",
+          "subtopicId": "dsu-mst",
+          "category": "Graphs"
+        },
+        {
+          "id": "dsu-mst-04",
+          "title": "Problem 04",
+          "subtopic": "DSU / MST",
+          "subtopicId": "dsu-mst",
+          "category": "Graphs"
+        },
+        {
+          "id": "dsu-mst-05",
+          "title": "Problem 05",
+          "subtopic": "DSU / MST",
+          "subtopicId": "dsu-mst",
+          "category": "Graphs"
+        }
+      ]
+    },
+    {
+      "id": "dynamic-programming",
+      "name": "Dynamic Programming",
+      "tasks": [
+        {
+          "id": "state-transition-dp-01",
+          "title": "Problem 01",
+          "subtopic": "State Transition DP",
+          "subtopicId": "state-transition-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "state-transition-dp-02",
+          "title": "Problem 02",
+          "subtopic": "State Transition DP",
+          "subtopicId": "state-transition-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "state-transition-dp-03",
+          "title": "Problem 03",
+          "subtopic": "State Transition DP",
+          "subtopicId": "state-transition-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "state-transition-dp-04",
+          "title": "Problem 04",
+          "subtopic": "State Transition DP",
+          "subtopicId": "state-transition-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "state-transition-dp-05",
+          "title": "Problem 05",
+          "subtopic": "State Transition DP",
+          "subtopicId": "state-transition-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "state-transition-dp-06",
+          "title": "Problem 06",
+          "subtopic": "State Transition DP",
+          "subtopicId": "state-transition-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "knapsack-dp-01",
+          "title": "Problem 01",
+          "subtopic": "Knapsack DP",
+          "subtopicId": "knapsack-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "knapsack-dp-02",
+          "title": "Problem 02",
+          "subtopic": "Knapsack DP",
+          "subtopicId": "knapsack-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "knapsack-dp-03",
+          "title": "Problem 03",
+          "subtopic": "Knapsack DP",
+          "subtopicId": "knapsack-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "knapsack-dp-04",
+          "title": "Problem 04",
+          "subtopic": "Knapsack DP",
+          "subtopicId": "knapsack-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "sequence-dp-01",
+          "title": "Problem 01",
+          "subtopic": "Sequence DP",
+          "subtopicId": "sequence-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "sequence-dp-02",
+          "title": "Problem 02",
+          "subtopic": "Sequence DP",
+          "subtopicId": "sequence-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "sequence-dp-03",
+          "title": "Problem 03",
+          "subtopic": "Sequence DP",
+          "subtopicId": "sequence-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "sequence-dp-04",
+          "title": "Problem 04",
+          "subtopic": "Sequence DP",
+          "subtopicId": "sequence-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "sequence-dp-05",
+          "title": "Problem 05",
+          "subtopic": "Sequence DP",
+          "subtopicId": "sequence-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "sequence-dp-06",
+          "title": "Problem 06",
+          "subtopic": "Sequence DP",
+          "subtopicId": "sequence-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "sequence-dp-07",
+          "title": "Problem 07",
+          "subtopic": "Sequence DP",
+          "subtopicId": "sequence-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "partition-dp-01",
+          "title": "Problem 01",
+          "subtopic": "Partition DP",
+          "subtopicId": "partition-dp",
+          "category": "Dynamic Programming"
+        },
+        {
+          "id": "partition-dp-02",
+          "title": "Problem 02",
+          "subtopic": "Partition DP",
+          "subtopicId": "partition-dp",
+          "category": "Dynamic Programming"
+        }
+      ]
+    },
+    {
+      "id": "tries",
+      "name": "Tries",
+      "tasks": [
+        {
+          "id": "trie-01",
+          "title": "Problem 01",
+          "subtopic": "Trie",
+          "subtopicId": "trie",
+          "category": "Tries"
+        },
+        {
+          "id": "trie-02",
+          "title": "Problem 02",
+          "subtopic": "Trie",
+          "subtopicId": "trie",
+          "category": "Tries"
+        },
+        {
+          "id": "trie-03",
+          "title": "Problem 03",
+          "subtopic": "Trie",
+          "subtopicId": "trie",
+          "category": "Tries"
+        },
+        {
+          "id": "trie-04",
+          "title": "Problem 04",
+          "subtopic": "Trie",
+          "subtopicId": "trie",
+          "category": "Tries"
+        },
+        {
+          "id": "trie-05",
+          "title": "Problem 05",
+          "subtopic": "Trie",
+          "subtopicId": "trie",
+          "category": "Tries"
+        }
+      ]
+    },
+    {
+      "id": "strings",
+      "name": "Strings",
+      "tasks": [
+        {
+          "id": "string-matching-01",
+          "title": "Problem 01",
+          "subtopic": "String Matching",
+          "subtopicId": "string-matching",
+          "category": "Strings"
+        },
+        {
+          "id": "string-matching-02",
+          "title": "Problem 02",
+          "subtopic": "String Matching",
+          "subtopicId": "string-matching",
+          "category": "Strings"
+        },
+        {
+          "id": "string-matching-03",
+          "title": "Problem 03",
+          "subtopic": "String Matching",
+          "subtopicId": "string-matching",
+          "category": "Strings"
+        },
+        {
+          "id": "string-matching-04",
+          "title": "Problem 04",
+          "subtopic": "String Matching",
+          "subtopicId": "string-matching",
+          "category": "Strings"
+        }
+      ]
+    },
+    {
+      "id": "bit-manipulation",
+      "name": "Bit Manipulation",
+      "tasks": [
+        {
+          "id": "bit-manipulation-core-01",
+          "title": "Problem 01",
+          "subtopic": "Bit Manipulation",
+          "subtopicId": "bit-manipulation-core",
+          "category": "Bit Manipulation"
+        },
+        {
+          "id": "bit-manipulation-core-02",
+          "title": "Problem 02",
+          "subtopic": "Bit Manipulation",
+          "subtopicId": "bit-manipulation-core",
+          "category": "Bit Manipulation"
+        },
+        {
+          "id": "bit-manipulation-core-03",
+          "title": "Problem 03",
+          "subtopic": "Bit Manipulation",
+          "subtopicId": "bit-manipulation-core",
+          "category": "Bit Manipulation"
+        },
+        {
+          "id": "bit-manipulation-core-04",
+          "title": "Problem 04",
+          "subtopic": "Bit Manipulation",
+          "subtopicId": "bit-manipulation-core",
+          "category": "Bit Manipulation"
+        }
+      ]
+    },
+    {
+      "id": "mathematics",
+      "name": "Mathematics",
+      "tasks": [
+        {
+          "id": "number-theory-01",
+          "title": "Problem 01",
+          "subtopic": "Number Theory",
+          "subtopicId": "number-theory",
+          "category": "Mathematics"
+        }
+      ]
+    }
   ]
 }
