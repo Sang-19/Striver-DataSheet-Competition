@@ -1,6 +1,16 @@
-/* Striver Arena MVP — Firebase compat SDK */
-const CONFIG = window.STRIVER_CONFIG || {};
-const CATALOGUE_URL = './data/striver-sheet.json';
+/* Striver Arena — Vite environment configuration + Firebase compat SDK */
+import catalogue from './data/striver-sheet.json';
+
+const CONFIG = {
+  firebase: {
+    apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+    authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+    projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+    storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+    appId: import.meta.env.VITE_FIREBASE_APP_ID
+  }
+};
 const state = { user:null, page:'home', catalogue:null, progress:{}, competitions:[], activeCompetition:null, busy:false };
 const $ = (s,root=document)=>root.querySelector(s);
 const esc = s => String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -120,9 +130,9 @@ async function showCompetition(id){
  }catch(e){host.innerHTML='<div class="card">'+esc(e.message)+'</div>'}
 }
 async function start(){
- try{const response=await fetch(CATALOGUE_URL);state.catalogue=await response.json()}catch(e){state.catalogue={topics:[]}}
+ state.catalogue = catalogue;
  if(!bootFirebase()){
-  $('#app').innerHTML='<main class="auth card"><div class="brand">STRIVER <span>ARENA</span></div><h1>Firebase setup needed</h1><p class="muted">Open env.js and add your Firebase Web App configuration. Follow firebase.txt for the complete setup.</p></main>';return;
+  $('#app').innerHTML='<main class="auth card"><div class="brand">STRIVER <span>ARENA</span></div><h1>Firebase setup needed</h1><p class="muted">Add the six VITE_FIREBASE_* variables in Vercel Project Settings → Environment Variables. Redeploy after saving. See firebase.txt for setup.</p></main>';return;
  }
 }
 start();
