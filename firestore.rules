@@ -1,0 +1,52 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isSelf(uid) { return signedIn() && request.auth.uid == uid; }
+    function isCompetitionMember(competitionId) {
+      return signedIn() &&
+        exists(/databases/$(database)/documents/competitions/$(competitionId)/members/$(request.auth.uid));
+    }
+
+    match /users/{uid} {
+      allow read: if signedIn();
+      allow create, update: if isSelf(uid)
+        && request.resource.data.keys().hasOnly(['displayName','photoURL','email','createdAt','updatedAt','completedCount']);
+      allow delete: if false;
+      match /progress/{taskId} {
+        allow read: if isSelf(uid);
+        allow create, update, delete: if isSelf(uid);
+      }
+    }
+
+    match /competitions/{competitionId} {
+      // Competition documents expose only the challenge metadata needed by signed-in users
+      // to resolve an invite. Keep member progress in the protected users/{uid}/progress path.
+      allow read: if signedIn();
+      allow create: if signedIn()
+        && request.resource.data.ownerUid == request.auth.uid
+        && request.resource.data.keys().hasOnly(['name','code','ownerUid','memberUids','status','createdAt']);
+      // A signed-in user may add only their own UID when joining with a valid invite code.
+      allow update: if signedIn()
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['memberUids','updatedAt'])
+        && request.resource.data.memberUids.hasAll(resource.data.memberUids)
+        && request.resource.data.memberUids.hasAny([request.auth.uid]);
+      allow delete: if signedIn() && resource.data.ownerUid == request.auth.uid;
+
+      match /members/{uid} {
+        allow read: if isCompetitionMember(competitionId);
+        allow create: if isSelf(uid) && signedIn();
+        allow update: if isSelf(uid);
+        allow delete: if isSelf(uid) || (signedIn() &&
+          get(/databases/$(database)/documents/competitions/$(competitionId)).data.ownerUid == request.auth.uid);
+      }
+    }
+
+    match /inviteCodes/{code} {
+      allow get: if signedIn();
+      allow list: if false;
+      allow create: if signedIn() && request.resource.data.ownerUid == request.auth.uid;
+      allow update, delete: if signedIn() && resource.data.ownerUid == request.auth.uid;
+    }
+  }
+}
