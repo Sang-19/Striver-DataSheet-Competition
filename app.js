@@ -130,7 +130,7 @@ async function showCompetition(id){
  }catch(e){host.innerHTML='<div class="card">'+esc(e.message)+'</div>'}
 }
 async function start(){
- try{const response=await fetch(CATALOGUE_URL);state.catalogue=await response.json()}catch(e){state.catalogue={topics:[]}}
+ state.catalogue = catalogue;
  if(!bootFirebase()){
   $('#app').innerHTML='<main class="auth card"><div class="brand">STRIVER <span>ARENA</span></div><h1>Firebase setup needed</h1><p class="muted">Add the six VITE_FIREBASE_* variables in Vercel Project Settings → Environment Variables. Redeploy after saving. See firebase.txt for setup.</p></main>';return;
  }
