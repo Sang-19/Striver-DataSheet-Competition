@@ -69,7 +69,15 @@ function bindNavigation(){
 function bindTasks(){
  document.querySelectorAll('[data-task]').forEach(input=>input.onchange=async()=>{
   const id=input.dataset.task,ref=db.collection('users').doc(state.user.uid).collection('progress').doc(id);
-  try{if(input.checked) await ref.set({completed:true,completedAt:firebase.firestore.FieldValue.serverTimestamp(),updatedAt:firebase.firestore.FieldValue.serverTimestamp()});else await ref.delete()}
+  try{
+   if(input.checked) await ref.set({completed:true,completedAt:firebase.firestore.FieldValue.serverTimestamp(),updatedAt:firebase.firestore.FieldValue.serverTimestamp()});
+   else await ref.delete();
+   const snap=await db.collection('users').doc(state.user.uid).collection('progress').get();
+   const count=snap.docs.filter(d=>d.data().completed).length;
+   await db.collection('users').doc(state.user.uid).set({completedCount:count,updatedAt:firebase.firestore.FieldValue.serverTimestamp()},{merge:true});
+   const comps=await db.collection('competitions').where('memberUids','array-contains',state.user.uid).get();
+   for(const c of comps.docs) await c.ref.collection('members').doc(state.user.uid).set({completedCount:count,progressPercent:total()?Math.round(count/total()*100):0},{merge:true});
+  }
   catch(e){input.checked=!input.checked;toast(e.message)}
  });
 }
@@ -104,7 +112,7 @@ async function showCompetition(id){
  try{
   const ref=db.collection('competitions').doc(id),snap=await ref.get();if(!snap.exists)throw Error('Competition not found');
   const comp=snap.data(),members=await ref.collection('members').get(),rows=[];
-  for(const m of members.docs){const uid=m.id,profile=m.data(),ps=await db.collection('users').doc(uid).collection('progress').get();let count=0;ps.forEach(p=>{if(p.data().completed)count++});rows.push({...profile,uid,count,percent:total()?Math.round(count/total()*100):0})}
+  for(const m of members.docs){const uid=m.id,profile=m.data();rows.push({...profile,uid,count:profile.completedCount||0,percent:profile.progressPercent||0})}
   rows.sort((a,b)=>b.count-a.count);
   host.innerHTML=`<section class="card" style="margin-top:16px"><div class="section-head"><div><div class="eyebrow">HEAD TO HEAD</div><h2>${esc(comp.name)}</h2></div><span class="pill">${esc(comp.code)}</span></div><p class="muted">Share this code with a friend: <b style="color:var(--lime)">${esc(comp.code)}</b></p>${rows.map((r,i)=>`<div class="leader"><span class="rank">#${i+1}</span><img src="${esc(r.photoURL||'https://placehold.co/80x80')}" alt=""><strong>${esc(r.displayName||'Learner')}${r.uid===state.user.uid?' (you)':''}</strong><span>${r.count} done · ${r.percent}%</span></div>`).join('')}<p class="muted" style="font-size:12px">Comparison uses each member's manually marked completed tasks.</p></section>`;
  }catch(e){host.innerHTML='<div class="card">'+esc(e.message)+'</div>'}
