@@ -1,0 +1,48 @@
+{
+  "title": "Striver DSA Sheet — starter catalogue",
+  "description": "Replace this starter catalogue with the verified sheet data before launch. Tasks are manually marked complete by each user.",
+  "sourceUrl": "https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/",
+  "topics": [
+    {"id":"basics","name":"Learn the basics","tasks":[
+      {"id":"basics-01","title":"Things to Know in Programming"},
+      {"id":"basics-02","title":"Build-up Logical Thinking"},
+      {"id":"basics-03","title":"Learn STL"},
+      {"id":"basics-04","title":"Know Basic Maths"},
+      {"id":"basics-05","title":"Learn Basic Recursion"}
+    ]},
+    {"id":"sorting","name":"Sorting Techniques","tasks":[
+      {"id":"sorting-01","title":"Selection Sort"},
+      {"id":"sorting-02","title":"Bubble Sort"},
+      {"id":"sorting-03","title":"Insertion Sort"},
+      {"id":"sorting-04","title":"Merge Sort"},
+      {"id":"sorting-05","title":"Recursive Bubble Sort"},
+      {"id":"sorting-06","title":"Recursive Insertion Sort"},
+      {"id":"sorting-07","title":"Quick Sort"}
+    ]},
+    {"id":"arrays","name":"Arrays","tasks":[
+      {"id":"arrays-01","title":"Largest Element in an Array"},
+      {"id":"arrays-02","title":"Second Largest Element"},
+      {"id":"arrays-03","title":"Check if Array Is Sorted"},
+      {"id":"arrays-04","title":"Remove Duplicates from Sorted Array"},
+      {"id":"arrays-05","title":"Left Rotate Array by One"},
+      {"id":"arrays-06","title":"Left Rotate Array by D Places"},
+      {"id":"arrays-07","title":"Move Zeroes to End"}
+    ]},
+    {"id":"binary-search","name":"Binary Search","tasks":[
+      {"id":"bs-01","title":"Binary Search to Find X"},
+      {"id":"bs-02","title":"Implement Lower Bound"},
+      {"id":"bs-03","title":"Implement Upper Bound"},
+      {"id":"bs-04","title":"Search Insert Position"}
+    ]},
+    {"id":"strings","name":"Strings","tasks":[
+      {"id":"strings-01","title":"Remove Outermost Parentheses"},
+      {"id":"strings-02","title":"Reverse Words in a String"},
+      {"id":"strings-03","title":"Largest Odd Number in a String"}
+    ]},
+    {"id":"linked-list","name":"Linked List","tasks":[
+      {"id":"ll-01","title":"Introduction to Linked List"},
+      {"id":"ll-02","title":"Insert Node in Linked List"},
+      {"id":"ll-03","title":"Delete Node in Linked List"}
+    ]}
+  ]
+}

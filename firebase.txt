@@ -1,0 +1,70 @@
+# FIREBASE SETUP — STRIVER ARENA
+
+This project uses Firebase Authentication + Cloud Firestore. The frontend uses the Firebase Web SDK; its web config is public client configuration, not an admin secret.
+
+## 1. Create a Firebase project
+1. Open https://console.firebase.google.com/
+2. Click Add project and name it (for example, striver-arena).
+3. Google Analytics is optional.
+
+## 2. Register a Web App
+1. In Project Overview, click the Web icon (</>).
+2. Register the app as Striver Arena.
+3. Copy the Firebase config values into env.js:
+   - apiKey
+   - authDomain
+   - projectId
+   - storageBucket
+   - messagingSenderId
+   - appId
+4. Keep env.js in the project root. .env.example is a reference template for future Vite/build tooling.
+
+## 3. Enable Authentication
+1. Build > Authentication > Get started.
+2. Sign-in method > enable Email/Password.
+3. Sign-in method > enable Google.
+4. In Authentication > Settings > Authorized domains, add localhost and your deployed domain (for example, your-project.vercel.app).
+5. Set a support email for Google sign-in if prompted.
+
+## 4. Create Cloud Firestore
+1. Build > Firestore Database > Create database.
+2. Choose production mode.
+3. Choose a region close to your users (for example, asia-south1 if available and appropriate).
+4. Create the database.
+
+## 5. Publish security rules
+1. Open Firestore > Rules.
+2. Copy the complete contents of firestore.rules from this repository.
+3. Click Publish.
+4. Never use open rules such as allow read, write: if true in production.
+
+Collections used:
+- users/{uid}: public profile fields (displayName, photoURL, createdAt, updatedAt)
+- users/{uid}/progress/{taskId}: that user's completion status and timestamps
+- competitions/{competitionId}: invite code, owner, members, status, createdAt
+- competitions/{competitionId}/members/{uid}: member snapshot
+- inviteCodes/{code}: lookup document pointing to competitionId
+
+The client app writes only the signed-in user's own progress. Competition membership is readable by members. For production-grade invite-code creation and abuse prevention, move code generation/joining into a trusted Cloud Function or server endpoint; the included MVP client flow is suitable for testing only.
+
+## 6. Configure the app
+1. Copy env.js.example to env.js (or edit env.js directly).
+2. Replace every YOUR_* value with the Firebase Web App config.
+3. Commit env.js only if you accept that Firebase web config is public. Restrict the API key by HTTP referrers in Google Cloud Console.
+4. Run a local static server: python3 -m http.server 8000
+5. Open http://localhost:8000
+
+## 7. Deploy to Vercel
+1. Import the GitHub repository into Vercel.
+2. Framework preset: Other.
+3. Build command: leave empty.
+4. Output directory: . (root).
+5. Deploy.
+6. Add your production domain in Firebase Authentication > Authorized domains.
+
+## 8. Important security notes
+- Never upload service-account JSON, private keys, Admin SDK credentials, or OAuth client secrets.
+- Firebase Web API keys identify the project; they do not authorize database access by themselves. Firestore Security Rules enforce access.
+- For stronger anti-cheat, server-side invite codes, audit logs, and trusted score calculation, use Cloud Functions and validate all writes.
+- Firestore usage may incur charges beyond the free quota. Check current Firebase pricing and usage.
+- The included sheet catalogue is a starter dataset. Import the complete official Striver sheet catalogue only after confirming the exact list and item counts you want to track.
